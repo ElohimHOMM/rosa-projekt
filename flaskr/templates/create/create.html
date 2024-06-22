@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Aufgabe Anlegen{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+    <h1>Aufgabe anlegen</h1>
+    <p>Nutze diese Seite um neue Aufgaben anzulegen.</p>
+    <hr class="py-2">
+    <form action="POST">
+        <input type="text" name="Aufgabentitel" id="input-aufgabentitel" placeholder="Aufgabentitel">
+        <input type="submit">
+    </form>
+{% endblock %}  
+{% block scripts %}
+  {{ super() }}
+{% endblock %}
+
+    

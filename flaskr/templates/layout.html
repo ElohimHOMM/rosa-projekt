@@ -9,10 +9,12 @@
     {% endblock %}
 </head>
 <body>
-    {% block content %} {% endblock %} 
+    <div class="container-lg">
+        {% block content %} {% endblock %} 
+    </div>
     
     {% block scripts %} 
-    {{ bootstrap.load_js() }}
+        {{ bootstrap.load_js() }}
     {% endblock %}
 </body>
 </html>
