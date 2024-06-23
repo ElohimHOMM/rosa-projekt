@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
-from . import db, create
+from . import db, create, update
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -29,10 +29,6 @@ def create_app(test_config=None):
     def hello_world():
         return render_template("landing.html")
 
-    @app.route("/update")
-    def update():
-        return "<p>aktualisieren</p>"
-
     @app.route("/markdone")
     def markdone():
         return "<p>als abgeschlossen markieren</p>"
@@ -47,6 +43,7 @@ def create_app(test_config=None):
 
     ### Register Blueprints (these are essentially the outsourced routes)
     app.register_blueprint(create.bp)
+    app.register_blueprint(update.bp)
 
     ### initialize db
     db.init_app(app)
