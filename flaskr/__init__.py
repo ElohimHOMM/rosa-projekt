@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
-from . import db, create
+from . import db, create, read, update, markdone, delete
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -29,24 +29,12 @@ def create_app(test_config=None):
     def hello_world():
         return render_template("landing.html")
 
-    @app.route("/update")
-    def update():
-        return "<p>aktualisieren</p>"
-
-    @app.route("/markdone")
-    def markdone():
-        return "<p>als abgeschlossen markieren</p>"
-
-    @app.route("/delete")
-    def delete():
-        return "<p>delete</p>"
-
-    @app.route("/search")
-    def search():
-        return "<p>suche</p>"
-
     ### Register Blueprints (these are essentially the outsourced routes)
     app.register_blueprint(create.bp)
+    app.register_blueprint(update.bp)
+    app.register_blueprint(markdone.bp)
+    app.register_blueprint(delete.bp)
+    app.register_blueprint(read.bp)
 
     ### initialize db
     db.init_app(app)

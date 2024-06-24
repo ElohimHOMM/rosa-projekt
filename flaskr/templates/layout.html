@@ -5,16 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ bootstrap.load_css() }}
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
     <title>{% block title %}{% endblock %} - Aufgabenplaner</title>
     {% endblock %}
 </head>
 <body>
+    <nav class="navbar fixed-top navbar-expand-lg py-0" style="background-color: rgb(243, 223, 240);">
+        <div class="container-fluid">
+            <a class="navbar-brand py-0 img-wrap" href="/">
+                <img src="/static/img/logo_slim.JPG" alt="logo">
+            </a>
+            <ul class="navbar-nav me-auto mb-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/create">Aufgabe anlegen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/update">Aufgabe aktualisieren</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/markdone">Aufgabe als erledigt markieren</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/delete">Aufgabe löschen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/read">Aufgabe suchen</a>
+                </li>
+            </ul>
+            <ul class="justify-content-end mb-0">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Website durchsuchen"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"
+                        style="background-color: rgb(255, 255, 255); color: rgb(218, 89, 190); border-color: rgb(218, 89, 190);">Suche</button>
+                </form>
+            </ul>
+        </div>
+    </nav>
     <div class="container-lg">
-        {% block content %} {% endblock %} 
+        {% block content %} {% endblock %}
     </div>
-    
-    {% block scripts %} 
-        {{ bootstrap.load_js() }}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
     {% endblock %}
 </body>
 </html>
