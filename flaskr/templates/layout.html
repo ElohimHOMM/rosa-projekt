@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% block head %}
     <meta charset="UTF-8">
@@ -10,7 +9,6 @@
     <title>{% block title %}{% endblock %} - Aufgabenplaner</title>
     {% endblock %}
 </head>
-
 <body>
     <nav class="navbar fixed-top navbar-expand-lg py-0" style="background-color: rgb(243, 223, 240);">
         <div class="container-fluid">
@@ -47,10 +45,8 @@
     <div class="container-lg">
         {% block content %} {% endblock %}
     </div>
-
     {% block scripts %}
     {{ bootstrap.load_js() }}
     {% endblock %}
 </body>
-
 </html>
