@@ -1,7 +1,11 @@
-{% extends "layout.html" %}
+{% extends "/fragments/layout.html" %}
+{% include "/fragments/navbar.html" %}
 {% block title %}Aufgabe aktualisieren{% endblock %}
 {% block head %}
 {{ super() }}
+{% endblock %}
+{% block navbar %}
+  {{ super() }}
 {% endblock %}
 {% block content %}
 <h1>Aufgabe aktualisieren</h1>

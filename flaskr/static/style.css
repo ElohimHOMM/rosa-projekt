@@ -8,7 +8,7 @@ html, body{
 
 /* Top Navigation Bar */
 .navbar.fixed-top {
-    background: #F7F7F7;
+    background-color: rgb(243, 223, 240);
     min-height: 0;
     height: 45px;
     padding: 5px 0;
@@ -22,6 +22,7 @@ html, body{
     display: inline-block;
     overflow: hidden;
     margin: 0;
+    margin-right: 0.5em;
 }
 
 .img-wrap > img {
@@ -29,4 +30,11 @@ html, body{
     min-height: 100%;
     min-width: 100%;
     height: 100%;
+}
+
+/* Rosa CI Colours */
+.btn-rosa {
+    background-color: rgb(255, 255, 255);
+    color: rgb(218, 89, 190);
+    border-color: rgb(218, 89, 190);
 }

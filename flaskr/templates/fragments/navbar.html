@@ -1,0 +1,32 @@
+{% block navbar %}
+<nav class="navbar fixed-top navbar-expand-lg py-0">
+    <div class="container-fluid">
+        <a class="navbar-brand py-0 img-wrap" href="/">
+            <img src="/static/img/logo_slim.JPG" alt="logo">
+        </a>
+        <ul class="navbar-nav me-auto mb-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/create">Aufgabe anlegen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/update">Aufgabe aktualisieren</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/markdone">Aufgabe als erledigt markieren</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/delete">Aufgabe löschen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/read">Aufgabe suchen</a>
+            </li>
+        </ul>
+        <ul class="justify-content-end mb-0">
+            <form class="d-flex mb-0" role="search">
+                <input class="form-control me-2" type="search" placeholder="Website durchsuchen" aria-label="Search">
+                <button class="btn btn-rosa" type="submit">Suche</button>
+            </form>
+        </ul>
+    </div>
+</nav>
+{% endblock %}

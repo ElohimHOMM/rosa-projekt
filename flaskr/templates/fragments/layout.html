@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>{% block title %}{% endblock %} - Aufgabenplaner</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="container-lg">
+        {% block content %} {% endblock %}
+    </div>
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+</html>

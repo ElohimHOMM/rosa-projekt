@@ -1,6 +1,10 @@
-{% extends "layout.html" %}
+{% extends "/fragments/layout.html" %}
+{% include "/fragments/navbar.html" %}
 {% block title %}Aufgabe suchen{% endblock %}
 {% block head %}
+  {{ super() }}
+{% endblock %}
+{% block navbar %}
   {{ super() }}
 {% endblock %}
 {% block content %}
