@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from flaskr.db.db import get_db
 
 bp = Blueprint('login', __name__, url_prefix='/login')
 

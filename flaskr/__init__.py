@@ -5,7 +5,6 @@ from flask_login import LoginManager
 import secrets
 
 from .blueprints import create, delete, markdone, read, update, login
-from .db import db
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -13,7 +12,6 @@ def create_app(test_config=None):
         SECRET_KEY = 'dev',
         DATABASE = os.path.join(app.instance_path, 'flaskr.sqlite'),
         TEMPLATES_AUTO_RELOAD = True,
-        SECRET_KEY = secrets.token_hex()
     )
     bootstrap = Bootstrap5(app)
     login_manager = LoginManager()
@@ -43,8 +41,5 @@ def create_app(test_config=None):
     app.register_blueprint(markdone.bp)
     app.register_blueprint(delete.bp)
     app.register_blueprint(read.bp)
-
-    ### initialize db
-    db.init_app(app)
 
     return app
