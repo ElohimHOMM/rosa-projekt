@@ -1,0 +1,24 @@
+{% extends "/fragments/layout.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <div class="notification is-danger">
+            {{ messages[0] }}
+      </div>
+  {% endif %}
+  {% endwith %}
+    <h1>Login</h1>
+    <br>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" value="{{request.form.username}}">
+        <input type="text" name="password" placeholder="Passwort" value="{{request.form.password}}">
+        <button class="btn btn-rosa" type="submit" value="Login">Login</button>
+    </form>
+{% endblock %}  
+{% block scripts %}
+    {{ super() }}
+{% endblock %} 

@@ -1,20 +1,27 @@
 {% extends "/fragments/layout.html" %}
 {% block title %}Login{% endblock %}
 {% block head %}
-  {{ super() }}
+    {{ super() }}
 {% endblock %}
 {% block content %}
-    <h1>Login</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+        </div>
+    {% endif %}
+    {% endwith %}
+    <h1>Registrierung</h1>
     <br>
     <form method="post">
         <input type="text" name="username" placeholder="Username" value="{{request.form.username}}">
         <input type="text" name="password" placeholder="Passwort" value="{{request.form.password}}">
-        <button class="btn btn-rosa" type="submit" value="Login">Login</button>
+        <button class="btn btn-rosa" type="submit" value="Login">Registrieren</button>
     </form>
     {% if error %}  
         <p class="error"><strong>Error:</strong> {{ error }}</p>
     {% endif %}
 {% endblock %}  
 {% block scripts %}
-  {{ super() }}
+    {{ super() }}
 {% endblock %} 

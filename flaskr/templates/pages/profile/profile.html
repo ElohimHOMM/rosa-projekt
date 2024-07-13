@@ -1,0 +1,15 @@
+{% extends "/fragments/layout.html" %}
+{% include "/fragments/navbar.html" %}
+{% block title %}Landing Page{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block navbar %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+      <h1>Willkommen auf deinem Profil {{user.username}}!</h1>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+{% endblock %}
