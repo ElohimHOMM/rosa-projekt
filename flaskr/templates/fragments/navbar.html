@@ -12,19 +12,19 @@
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="nav-link" href="/aufgabenplaner/create">Aufgabe anlegen</a>
+                            <a class="dropdown-item" href="/aufgabenplaner/create">Aufgabe anlegen</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/aufgabenplaner/update">Aufgabe aktualisieren</a>
+                            <a class="dropdown-item" href="/aufgabenplaner/update">Aufgabe aktualisieren</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/aufgabenplaner/markdone">Aufgabe als erledigt markieren</a>
+                            <a class="dropdown-item" href="/aufgabenplaner/markdone">Aufgabe als erledigt markieren</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/aufgabenplaner/delete">Aufgabe löschen</a>
+                            <a class="dropdown-item" href="/aufgabenplaner/delete">Aufgabe löschen</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/aufgabenplaner/read">Aufgabe suchen</a>
+                            <a class="dropdown-item" href="/aufgabenplaner/read">Aufgabe suchen</a>
                         </li>
                     </ul>
                   </div>
@@ -36,21 +36,31 @@
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="nav-link" href="/lernkarten">Lernkartenübersicht</a>
+                            <a class="dropdown-item" href="/lernkarten">Lernkartenübersicht</a>
                         </li>
                     </ul>
-                  </div>
+                </div>
             </li>
         </ul>
-        <ul class="justify-content-end mb-0">
+        <div class="justify-content-end dropdown">
+            <a class="navbar-brand ps-3 pe-0 py-0 dropdown-toggle no-select img-wrap" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/static/img/user.jpg" alt="profile">
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="/profile">Profil</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="ps-0 mb-0">
             <form class="d-flex mb-0" role="search">
                 <input class="form-control me-2" type="search" placeholder="Website durchsuchen" aria-label="Search">
                 <button class="btn btn-rosa" type="submit">Suche</button>
             </form>
         </ul>
-        <a class="navbar-brand ps-3 pe-0 py-0 img-wrap" href="/profile">
-            <img src="/static/img/user.jpg" alt="profile">
-        </a>
     </div>
 </nav>
 {% endblock %}

@@ -2,22 +2,54 @@
 {% include "/fragments/navbar.html" %}
 {% block title %}Aufgabe anlegen{% endblock %}
 {% block head %}
-  {{ super() }}
+	{{ super() }}
 {% endblock %}
 {% block navbar %}
-  {{ super() }}
+	{{ super() }}
 {% endblock %}
 {% block content %}
-    <h1>Aufgabe anlegen</h1>
-    <p>Nutze diese Seite um neue Aufgaben anzulegen.</p>
-    <hr class="py-2">
-    <form action="POST">
-        <input type="text" name="Aufgabentitel" id="input-aufgabentitel" placeholder="Aufgabentitel">
-        <input type="submit">
-    </form>
-    <br>
-    <br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+	<div class="alert alert-danger">
+		{{ messages[0] }}
+	</div>
+{% endif %}
+{% endwith %}
+<h1>Aufgabe anlegen</h1>
+<p>Nutze diese Seite um neue Aufgaben anzulegen.</p>
+<hr class="py-2">
+<form method="post">
+	<div class="row pb-3">
+		<div class="col-12">
+			<label for="input-aufgabentitel" class="form-label">Aufgabentitel</label>
+			<input type="text" name="titel" placeholder="Aufgabentitel" value="{{request.form.titel}}" class="form-control input-rosa" required>
+		</div>
+	</div>
+	<div class="row pb-3">
+		<div class="col-4">
+			<label for="input-beginndatum" class="form-label">Beginndatum</label>
+			<input value="{{request.form.beginndatum}}" name="beginndatum" type="date" class="form-control input-rosa">
+		</div>
+		<div class="col-4">
+			<label for="input-fälligkeitsdatum" class="form-label">Fälligkeitsdatum</label>
+			<input value="{{request.form.enddatum}}" name="enddatum" type="date" class="form-control input-rosa">
+		</div>
+		<div class="col-4">
+			<label for="select-priorität" class="form-label">Priorität</label>
+			<select value="{{request.form.prioritaet}}" name="prioritaet" class="form-control input-rosa" required>
+				<option value="hoch">hoch</option>
+				<option value="mittel">mittel</option>
+				<option value="niedrig">niedrig</option>
+			</select>
+		</div> 
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<button class="btn btn-rosa" type="submit" value="Speichern">Speichern</button>
+		</div>
+	</div>
+</form>
 {% endblock %}  
 {% block scripts %}
-  {{ super() }}
+	{{ super() }}
 {% endblock %} 

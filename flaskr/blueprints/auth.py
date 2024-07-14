@@ -40,7 +40,7 @@ def register_post():
     user = User.query.filter_by(username = username).first()
 
     if user: # This check returns None (or Falsey) if user is not present
-        flash('Username already exists')
+        flash('Username already exists.')
         return redirect(url_for('auth.register'))
     
     # If user was not present we continue here and create one in the DB. Password is hashed
