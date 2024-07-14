@@ -42,10 +42,11 @@ def load_user(user_id):
 
 # Actual Controlling goes here
 
-from .blueprints import auth, create, delete, markdone, read, update, main
 ### Register Blueprints (these are essentially the outsourced routes)
+from .blueprints import auth, main
 app.register_blueprint(auth.bp)
 app.register_blueprint(main.bp)
+from .blueprints.aufgabenplaner import create, delete, markdone, read, update
 app.register_blueprint(create.bp)
 app.register_blueprint(update.bp)
 app.register_blueprint(markdone.bp)

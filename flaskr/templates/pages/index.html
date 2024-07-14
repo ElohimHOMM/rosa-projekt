@@ -2,22 +2,36 @@
 {% include "/fragments/navbar.html" %}
 {% block title %}Landing Page{% endblock %}
 {% block head %}
-  {{ super() }}
+    {{ super() }}
 {% endblock %}
 {% block navbar %}
-  {{ super() }}
+    {{ super() }}
 {% endblock %}
 {% block content %}
-      <h1>Wunderschöne Landingpage 💗</h1>
-      <p class="pb-2">Herzlich Willkommen bei unserem Aufgabenplaner!</p>    
-      <div class="list-group">
-          <a href="/create" class="list-group-item list-group-item-action list-group-item-success">Aufgabe erstellen</a>
-          <a href="/update" class="list-group-item list-group-item-action list-group-item-warning">Aufgabe aktualisieren</a>
-          <a href="/markdone" class="list-group-item list-group-item-action list-group-item-primary">Aufgabe als erledigt markieren</a>
-          <a href="/delete" class="list-group-item list-group-item-action list-group-item-danger">Aufgabe löschen</a>
-          <a href="/read" class="list-group-item list-group-item-action list-group-item-info">Aufgabe suchen</a>
+    <h1>Wunderschöne Landingpage 💗</h1>
+    <p class="pb-2">Herzlich Willkommen bei Rosa's Website!</p>
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <h2>Aufgabenplaner</h2>
+            <hr>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/aufgabenplaner/create">Aufgabe erstellen</a>
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/aufgabenplaner/update">Aufgabe aktualisieren</a>
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/aufgabenplaner/markdone">Aufgabe als erledigt markieren</a>
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/aufgabenplaner/delete">Aufgabe löschen</a>
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/aufgabenplaner/read">Aufgabe suchen</a>
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>Lernkarten</h2>
+            <hr>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action list-group-item-rosa" href="/lernkarten">Lernkartenübersicht</a>
+            </div>
+        </div>
       </div>
 {% endblock %}  
 {% block scripts %}
-  {{ super() }}
+    {{ super() }}
 {% endblock %}

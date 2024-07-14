@@ -32,8 +32,18 @@ html, body{
     height: 100%;
 }
 
+.no-select {
+    user-select: none;
+}
+
 /* Rosa CI Colours */
 .btn-rosa {
+    background-color: rgb(255, 255, 255);
+    color: rgb(218, 89, 190);
+    border-color: rgb(218, 89, 190);
+}
+
+.list-group-item-rosa {
     background-color: rgb(255, 255, 255);
     color: rgb(218, 89, 190);
     border-color: rgb(218, 89, 190);

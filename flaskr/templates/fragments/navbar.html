@@ -5,20 +5,41 @@
             <img src="/static/img/logo_slim.JPG" alt="logo">
         </a>
         <ul class="navbar-nav me-auto mb-0">
-            <li class="nav-item">
-                <a class="nav-link" href="/create">Aufgabe anlegen</a>
+            <li class="nav-item px-3">
+                <div class="dropdown">
+                    <div class="dropdown-toggle no-select" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Aufgabenplaner
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-link" href="/aufgabenplaner/create">Aufgabe anlegen</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/aufgabenplaner/update">Aufgabe aktualisieren</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/aufgabenplaner/markdone">Aufgabe als erledigt markieren</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/aufgabenplaner/delete">Aufgabe löschen</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/aufgabenplaner/read">Aufgabe suchen</a>
+                        </li>
+                    </ul>
+                  </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/update">Aufgabe aktualisieren</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/markdone">Aufgabe als erledigt markieren</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/delete">Aufgabe löschen</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/read">Aufgabe suchen</a>
+            <li class="nav-item px-3">
+                <div class="dropdown">
+                    <div class="dropdown-toggle no-select" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Lernkarten
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-link" href="/lernkarten">Lernkartenübersicht</a>
+                        </li>
+                    </ul>
+                  </div>
             </li>
         </ul>
         <ul class="justify-content-end mb-0">
